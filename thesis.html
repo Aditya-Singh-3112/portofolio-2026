@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master's Thesis — Aditya Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>ADITYA SINGH<span class="cursor">_</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="patent.html">Patent</a>
+      <a href="thesis.html" class="active">Thesis</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section id="thesis">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Master's Thesis</h2>
+        <span class="sec-sub">M.Tech, IIIT Allahabad &middot; 2024&ndash;2026</span>
+      </div>
+
+      <div class="research-card">
+        <span class="research-tag">Thesis</span>
+        <h3 class="research-title">Implementing Virtual Memory Management in Pipelined CAAO: A High-Throughput, VRAM-Efficient Training Approach</h3>
+        <div class="research-status">M.Tech Thesis &middot; Information Technology (Machine Learning)</div>
+        <div class="research-body">
+          <p>Training a large network on a single GPU has a predictable failure mode: the first few hundred steps look fine, then an allocation fails and the run dies, because a single step needs weights, gradients, optimizer state, and forward-pass activations all resident in VRAM at once. The standard fix &mdash; keeping unused weights in host RAM and pulling them back on demand &mdash; usually disappoints in practice, because most implementations move data across PCIe as one blocking copy: the GPU finishes a layer, asks for the next, and idles while the bytes cross the bus.</p>
+          <p>This thesis goes after the <em>waiting</em>, not just the transfer. GPU VRAM plays the role of a small set of physical page frames; host RAM is the swap device behind it. The network is cut into components &mdash; each roughly one Transformer block &mdash; with only two or three ever resident on the GPU together. Four operations run concurrently on independent CUDA streams: the next component is prefetched CPU→GPU, the current one runs forward and backward, the previous one is shipped back to the CPU, and the optimizer updates weights host-side. Page-locked host memory is what makes it work: once buffers are pinned, the DMA engine moves data without either processor stopping to wait on the other.</p>
+          <p>Two architectures were evaluated at opposite ends of the memory spectrum. On a small Autoencoder over CIFAR-10, the pinned CAAO variant reached <strong style="color:var(--ink)">8,310.63 samples/sec</strong> while holding peak VRAM to 422MB, against 554MB for ordinary training. The Vision Transformer is the more honest test: peak memory dropped from 4,910MB to 1,864MB &mdash; close to a 62% reduction &mdash; but throughput fell from 677 to 361 samples/sec. That tradeoff is reported without dressing it up, because a run that finishes slowly is still worth more than one that crashes on the first batch. In every configuration, the loss curve tracked the baseline without drifting.</p>
+        </div>
+
+        <div class="research-results">
+          <div class="r-stat">
+            <div class="r-stat-num">8,310.63<small> samp/s</small></div>
+            <div class="r-stat-label">Pinned CAAO throughput, Autoencoder (CIFAR-10)</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">422 <small>vs 554MB</small></div>
+            <div class="r-stat-label">Peak VRAM, Autoencoder: CAAO vs baseline</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">1,864 <small>vs 4,910MB</small></div>
+            <div class="r-stat-label">Peak VRAM, ViT: CAAO vs baseline (&minus;62%)</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">361 <small>vs 677 samp/s</small></div>
+            <div class="r-stat-label">ViT throughput tradeoff for that memory savings</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">No drift</div>
+            <div class="r-stat-label">Loss curve tracked baseline across all configs</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">2 archs</div>
+            <div class="r-stat-label">Autoencoder + ViT, opposite ends of memory spectrum</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="page-flow">
+    <a href="patent.html"><span>&larr;</span><span><span class="pf-tag">Previous</span>Patent</span></a>
+    <a href="projects.html" class="pf-next"><span><span class="pf-tag">Next</span>Projects</span><span>&rarr;</span></a>
+  </div>
+<footer class="mini-foot">&copy; 2026 Aditya Singh &middot; Built with an unhealthy interest in GPU memory maps</footer>
+
+<script src="nav.js"></script>
+
+</body>
+</html>

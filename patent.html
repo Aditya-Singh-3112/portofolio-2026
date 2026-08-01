@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patent — Aditya Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>ADITYA SINGH<span class="cursor">_</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="patent.html" class="active">Patent</a>
+      <a href="thesis.html">Thesis</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section id="patent">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Patent</h2>
+        <span class="sec-sub">Filed · authoring MLSys submission</span>
+      </div>
+
+      <div class="research-card">
+        <span class="research-tag">Patent · Memory Orchestration</span>
+        <h3 class="research-title">Component-Aware Asynchronous Offloading (CAAO)</h3>
+        <div class="research-status">Inventor &middot; research manuscript in preparation for MLSys submission</div>
+        <div class="research-body">
+          <p>CAAO maps operating-system virtual memory concepts onto deep learning training. It runs a four-stage instruction pipeline &mdash; <strong style="color:var(--ink)">prefetch, compute, offload, update</strong> &mdash; across independent hardware streams, masking PCIe transfer latency so the GPU is never sitting idle waiting on a copy.</p>
+          <p>The framework enables enterprise-grade ViT and GAN training on consumer GPUs by integrating zero-copy DMA transfers via pinned CPU memory, eliminating bounce buffers and bounding peak VRAM to the size of the largest active component rather than the whole model.</p>
+        </div>
+        <div class="research-results two">
+          <div class="r-stat">
+            <div class="r-stat-num">↓ 62%<small> peak VRAM</small></div>
+            <div class="r-stat-label">Reduction in training memory footprint</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">4-stage<small> pipeline</small></div>
+            <div class="r-stat-label">Prefetch → Compute → Offload → Update</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="page-flow">
+    <a href="experience.html"><span>&larr;</span><span><span class="pf-tag">Previous</span>Experience</span></a>
+    <a href="thesis.html" class="pf-next"><span><span class="pf-tag">Next</span>Thesis</span><span>&rarr;</span></a>
+  </div>
+<footer class="mini-foot">&copy; 2026 Aditya Singh &middot; Built with an unhealthy interest in GPU memory maps</footer>
+
+<script src="nav.js"></script>
+
+</body>
+</html>

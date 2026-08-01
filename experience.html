@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Aditya Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>ADITYA SINGH<span class="cursor">_</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="experience.html" class="active">Experience</a>
+      <a href="patent.html">Patent</a>
+      <a href="thesis.html">Thesis</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">Jan 2026 &ndash; Jun 2026</div>
+        <div>
+          <div class="xp-role">Software Development Engineer Intern</div>
+          <div class="xp-org">Amazon</div>
+          <ul>
+            <li>Architected an AI chatbot on Bedrock AgentCore that let 5,000+ users instantly query internal documentation instead of hunting through scattered docs.</li>
+            <li>Consolidated fragmented data into a unified Knowledge Base with RBAC and regex validation, eliminating duplicate documents and ensuring clean, sanitized data.</li>
+            <li>Eliminated critical AgentCore startup timeouts by building a 7-stack AWS CDK infrastructure with custom Docker images.</li>
+            <li>Built a custom integration test suite that fixed inaccurate line coverage tracking for SQS requests, capturing CloudWatch metrics with 100% accuracy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="xp-item">
+        <div class="xp-when">Jul 2023 &ndash; Aug 2023</div>
+        <div>
+          <div class="xp-role">Machine Learning Intern</div>
+          <div class="xp-org">Suvidha Foundation</div>
+          <ul>
+            <li>Fine-tuned a Transformer-based BERT model, lifting summarization accuracy by 20% over the legacy workflow.</li>
+            <li>Deployed the upgraded summarization model into production, cutting data processing time by 30%.</li>
+            <li>Evaluated output quality with ROUGE metrics, driving a 10% increase in ROUGE-L scores.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="page-flow">
+    <a href="index.html"><span>&larr;</span><span><span class="pf-tag">Previous</span>Home</span></a>
+    <a href="patent.html" class="pf-next"><span><span class="pf-tag">Next</span>Patent</span><span>&rarr;</span></a>
+  </div>
+<footer class="mini-foot">&copy; 2026 Aditya Singh &middot; Built with an unhealthy interest in GPU memory maps</footer>
+
+<script src="nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Aditya Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>ADITYA SINGH<span class="cursor">_</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="patent.html">Patent</a>
+      <a href="thesis.html">Thesis</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <h2 class="sec-title">Projects</h2>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">ResumeMatch</div>
+          <span class="proj-link" style="cursor:default;">Building now</span>
+        </div>
+        <div class="proj-desc">A full-stack ML app that scores how well a resume matches a job description using sentence embeddings, then surfaces a gap analysis and ATS-style keyword check &mdash; scoped as a focused, deployable companion project, shipping on free-tier hosting.</div>
+        <div class="proj-tags">
+          <span class="tag">Sentence Embeddings</span><span class="tag">Semantic Similarity</span>
+          <span class="tag">Gap Analysis</span><span class="tag">ATS Keyword Matching</span><span class="tag">Full-Stack ML</span>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric"><div class="metric-num">In progress</div><div class="metric-label">Actively building</div></div>
+          <div class="metric"><div class="metric-num">1&ndash;2 wks</div><div class="metric-label">Scoped build timeline</div></div>
+          <div class="metric"><div class="metric-num">Free-tier</div><div class="metric-label">Planned deployment</div></div>
+          <div class="metric"><div class="metric-num">Resume ↔ JD</div><div class="metric-label">Semantic match scoring</div></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">EdgeViT-Compress</div>
+          <a class="proj-link" href="https://github.com/Aditya-Singh-3112" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+        <div class="proj-desc">An end-to-end compression pipeline for a DeiT-based Vision Transformer, combining structured attention-head/MLP pruning, knowledge distillation, and INT8 dynamic quantization &mdash; trained on CIFAR-100, benchmarked on CPU to simulate real edge deployment.</div>
+        <div class="proj-tags">
+          <span class="tag">PyTorch</span><span class="tag">timm</span><span class="tag">Structured Pruning</span>
+          <span class="tag">Knowledge Distillation</span><span class="tag">INT8 Quantization</span><span class="tag">ONNX</span>
+        </div>
+
+        <div class="proj-metrics">
+          <div class="metric"><div class="metric-num">79.2% ↓</div><div class="metric-label">Model size &middot; 21.2MB → 4.4MB</div></div>
+          <div class="metric"><div class="metric-num">91.9%</div><div class="metric-label">Baseline accuracy retained</div></div>
+          <div class="metric"><div class="metric-num">29.8% ↓</div><div class="metric-label">Params &middot; 5.54M → 3.89M</div></div>
+          <div class="metric"><div class="metric-num">+8.2 pts</div><div class="metric-label">Accuracy recovered via distillation</div></div>
+        </div>
+
+        <div class="pareto">
+          <div class="pareto-label">Accuracy retained vs. compression stage</div>
+          <div class="pareto-bars">
+            <div class="pareto-col">
+              <div class="pareto-bar" style="height:100%;"><b>80.0%</b></div>
+              <div class="pareto-tick">fp32 baseline</div>
+            </div>
+            <div class="pareto-col">
+              <div class="pareto-bar" style="height:82.6%;"><b>66.1%</b></div>
+              <div class="pareto-tick">pruned only</div>
+            </div>
+            <div class="pareto-col">
+              <div class="pareto-bar hl" style="height:92.9%;"><b>74.3%</b></div>
+              <div class="pareto-tick">+ distillation</div>
+            </div>
+            <div class="pareto-col">
+              <div class="pareto-bar hl" style="height:91.9%;"><b>73.5%</b></div>
+              <div class="pareto-tick">+ INT8 quant.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-head">
+          <div class="proj-title">LLM-Powered DBMS</div>
+          <a class="proj-link" href="https://github.com/Aditya-Singh-3112" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+        <div class="proj-desc">A full-stack system that translates natural language into optimized SQL, freeing non-technical users from writing SQL by hand. RESTful backend in FastAPI and SQLite with hand-tuned schema and indexing for sub-second responses on complex, multi-table queries.</div>
+        <div class="proj-tags">
+          <span class="tag">FastAPI</span><span class="tag">SQLite</span><span class="tag">LLM Tooling</span>
+          <span class="tag">Flask / Jinja2</span><span class="tag">Schema Generation</span>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric"><div class="metric-num">89.6%</div><div class="metric-label">Correct SQL translation, 500 test commands</div></div>
+          <div class="metric"><div class="metric-num">21% ↓</div><div class="metric-label">Onboarding time for non-technical users</div></div>
+          <div class="metric"><div class="metric-num">Sub-second</div><div class="metric-label">Response on complex multi-table queries</div></div>
+          <div class="metric"><div class="metric-num">Full CRUD</div><div class="metric-label">Create · insert · query · update · delete</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="page-flow">
+    <a href="thesis.html"><span>&larr;</span><span><span class="pf-tag">Previous</span>Thesis</span></a>
+    <a href="skills.html" class="pf-next"><span><span class="pf-tag">Next</span>Skills</span><span>&rarr;</span></a>
+  </div>
+<footer class="mini-foot">&copy; 2026 Aditya Singh &middot; Built with an unhealthy interest in GPU memory maps</footer>
+
+<script src="nav.js"></script>
+
+</body>
+</html>
