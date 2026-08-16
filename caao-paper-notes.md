@@ -1,0 +1,5 @@
+# Source notes for the simplified CAAO animation
+
+Source: `/home/ubuntu/upload/mml2024011.pdf`, *Implementing Virtual Memory Management in Pipelined CAAO: A High-Throughput VRAM-Efficient Training Approach*, Aditya Singh, MML2024011.
+
+The paper defines a four-stage instruction pipeline: Prefetch loads component C[i+1] from CPU backing store to GPU VRAM; Compute runs the active C[i] forward/backward pass; Offload moves inactive C[i-1] back to CPU; Update performs CPU optimizer updates in the background. It maps VRAM to physical page frames, CPU RAM to swap/backing store, demand loading to asynchronous prefetch, and deterministic eviction to scheduled offload. The animation therefore uses a minimal CPU backing-store panel, a three-component GPU working window, a PCIe/DMA transfer channel, and four stage indicators. The paper’s ViT result reports 4910 MB baseline reserved VRAM versus 1864 MB for VM Pinned Pipelined CAAO, approximately a 62% reduction, with throughput changing from 676.57 to 361.04 samples/s. The written Research explanation is not to be changed.

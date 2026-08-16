@@ -1,0 +1,3 @@
+# Paper-faithful CAAO animation verification
+
+The animation now mirrors the supplied paper’s implementation vocabulary and flow: a component-management decomposition row; CPU RAM as pinned swap/backing store; GPU VRAM as a physical page frame with a three-page active working set; a PCIe/DMA path explicitly labeled as avoiding bounce buffers; C[i+1] page-in, C[i] forward/backward compute, C[i−1] deterministic page-out, and a CPU optimizer update lane; plus the overlap condition T_compute ≥ max(T_page in, T_page out). The written Research explanation was left unchanged. Desktop and mobile screenshots confirm the diagram is contained and readable. Typecheck and production build passed.
